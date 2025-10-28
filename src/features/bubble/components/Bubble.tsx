@@ -95,6 +95,7 @@ export const Bubble = (props: BubbleProps) => {
           'background-size': 'cover',
           'background-position': 'center',
           'background-repeat': 'no-repeat',
+          'border-radius': bubbleProps.theme?.chatWindow?.borderRadius ? `${bubbleProps.theme?.chatWindow?.borderRadius}px` : '24px',
           'z-index': 42424242,
           bottom: `${Math.min(buttonPosition().bottom + buttonSize + 10, window.innerHeight - chatWindowBottom)}px`,
           right: `${Math.max(0, Math.min(buttonPosition().right, window.innerWidth - (bubbleProps.theme?.chatWindow?.width ?? 410) - 10))}px`,
