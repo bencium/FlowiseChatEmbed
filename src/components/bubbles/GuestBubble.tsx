@@ -17,8 +17,8 @@ type Props = {
   renderHTML?: boolean;
 };
 
-const defaultBackgroundColor = '#EC4899';
-const defaultTextColor = '#ffffff';
+const defaultBackgroundColor = 'transparent';
+const defaultTextColor = '#2d3748';
 const defaultFontSize = 16;
 
 export const GuestBubble = (props: Props) => {

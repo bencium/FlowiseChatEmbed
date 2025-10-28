@@ -48,7 +48,7 @@ module.exports = {
                 }
             },
             borderRadius: {
-                'chatbot': '12px',
+                'chatbot': '24px',
             },
             fontFamily: {
                 chatbot: ['Poppins', 'Open Sans', ...defaultTheme.fontFamily.sans],

@@ -41,7 +41,7 @@ type Props = {
   handleTTSStop?: (messageId: string) => void;
 };
 
-const defaultBackgroundColor = '#F3E8FF';
+const defaultBackgroundColor = 'transparent';
 const defaultTextColor = '#2d3748';
 const defaultFontSize = 16;
 const defaultFeedbackColor = '#7C3AED';

@@ -10,11 +10,11 @@
   --chatbot-button-bg-color: #7C3AED;
   --chatbot-button-color: #ffffff;
 
-  --chatbot-host-bubble-bg-color: #F3E8FF;
+  --chatbot-host-bubble-bg-color: transparent;
   --chatbot-host-bubble-color: #2d3748;
 
-  --chatbot-guest-bubble-bg-color: #EC4899;
-  --chatbot-guest-bubble-color: #ffffff;
+  --chatbot-guest-bubble-bg-color: transparent;
+  --chatbot-guest-bubble-color: #2d3748;
 
   --chatbot-input-bg-color: #ffffff;
   --chatbot-input-color: #2d3748;
@@ -23,7 +23,7 @@
   --chatbot-header-bg-color: #7C3AED;
   --chatbot-header-color: #ffffff;
 
-  --chatbot-border-radius: 12px;
+  --chatbot-border-radius: 24px;
 
   /* Phone input */
   --PhoneInputCountryFlag-borderColor: transparent;
@@ -200,7 +200,7 @@ textarea {
 
 .chatbot-host-bubble {
   color: var(--chatbot-host-bubble-color);
-  background-color: #F3E8FF;
+  background-color: transparent;
   /* force wrapping of long text or links */
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -210,9 +210,9 @@ textarea {
 }
 
 .chatbot-host-bubble > .bubble-typing {
-  background-color: #F3E8FF;
+  background-color: transparent;
   border: var(--chatbot-host-bubble-border);
-  border-radius: 6px;
+  border-radius: 24px;
 }
 
 .chatbot-host-bubble img,
@@ -223,8 +223,8 @@ textarea {
 
 .chatbot-guest-bubble {
   color: var(--chatbot-guest-bubble-color);
-  background-color: #EC4899;
-  border-radius: 6px;
+  background-color: transparent;
+  border-radius: 24px;
   /* force wrapping of long text or links */
   overflow-wrap: break-word;
   word-wrap: break-word;

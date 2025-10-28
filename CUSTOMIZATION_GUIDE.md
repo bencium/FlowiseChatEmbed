@@ -13,7 +13,9 @@ This guide explains all the design customizations made to your FlowiseChatEmbed 
 These changes are baked into the compiled `dist/web.js` file after running `yarn build`:
 
 #### `/src/assets/index.css`
+
 **CSS design tokens updated:**
+
 - Button color: `#0042da` → `#7C3AED` (purple)
 - Bot bubble: `#f7f8ff` → `#F3E8FF` (light purple)
 - User bubble: `#3b81f6` → `#EC4899` (pink)
@@ -23,29 +25,37 @@ These changes are baked into the compiled `dist/web.js` file after running `yarn
 - Text colors: `#303235` → `#2d3748` (darker gray)
 
 #### `/src/components/bubbles/BotBubble.tsx`
+
 **Default color constants:**
+
 ```typescript
-defaultBackgroundColor: '#F3E8FF'  // Light purple
-defaultTextColor: '#2d3748'        // Dark gray
-defaultFeedbackColor: '#7C3AED'    // Purple
+defaultBackgroundColor: '#F3E8FF'; // Light purple
+defaultTextColor: '#2d3748'; // Dark gray
+defaultFeedbackColor: '#7C3AED'; // Purple
 ```
 
 #### `/src/components/bubbles/GuestBubble.tsx`
+
 **Default color constants:**
+
 ```typescript
-defaultBackgroundColor: '#EC4899'  // Pink
+defaultBackgroundColor: '#EC4899'; // Pink
 ```
 
 #### `/src/features/bubble/components/BubbleButton.tsx`
+
 **Default button settings:**
+
 ```typescript
-defaultButtonColor: '#7C3AED'      // Purple
-defaultBottom: 24                  // Pixels from bottom
-defaultRight: 24                   // Pixels from right
+defaultButtonColor: '#7C3AED'; // Purple
+defaultBottom: 24; // Pixels from bottom
+defaultRight: 24; // Pixels from right
 ```
 
 #### `/tailwind.config.cjs`
+
 **Extended Tailwind theme with custom colors:**
+
 ```javascript
 colors: {
   brand: {
@@ -67,7 +77,9 @@ colors: {
 ### 2. **Example HTML File** (No rebuild needed)
 
 #### `/examples/custom-design.html`
+
 Comprehensive example showing:
+
 - How to reference the local build
 - Full theme configuration object
 - Custom CSS injection
@@ -103,6 +115,7 @@ start examples/custom-design.html
 ```
 
 **That's it!** You should see:
+
 - Purple chat button in the bottom-right corner
 - Purple/pink themed chat interface
 - Poppins font throughout
@@ -129,23 +142,23 @@ Chatbot.init({
       backgroundColor: '#ffffff',
 
       botMessage: {
-        backgroundColor: '#E0F2FE',  // Change to light blue
+        backgroundColor: '#E0F2FE', // Change to light blue
         textColor: '#1e293b',
       },
 
       userMessage: {
-        backgroundColor: '#3B82F6',  // Change to blue
+        backgroundColor: '#3B82F6', // Change to blue
         textColor: '#ffffff',
       },
 
       textInput: {
-        sendButtonColor: '#3B82F6',  // Change button color
+        sendButtonColor: '#3B82F6', // Change button color
       },
     },
 
     button: {
-      backgroundColor: '#3B82F6',    // Chat button color
-      size: 'large',                 // 'small' | 'medium' | 'large'
+      backgroundColor: '#3B82F6', // Chat button color
+      size: 'large', // 'small' | 'medium' | 'large'
       bottom: 24,
       right: 24,
     },
@@ -155,8 +168,8 @@ Chatbot.init({
       .chatbot-container {
         font-family: 'Inter', sans-serif !important;
       }
-    `
-  }
+    `,
+  },
 });
 ```
 
@@ -171,6 +184,7 @@ Chatbot.init({
 **Workflow:**
 
 1. **Edit source files:**
+
    ```bash
    # CSS design tokens
    vim src/assets/index.css
@@ -184,11 +198,13 @@ Chatbot.init({
    ```
 
 2. **Rebuild:**
+
    ```bash
    yarn build
    ```
 
 3. **Test:**
+
    ```bash
    open examples/custom-design.html
    ```
@@ -222,11 +238,12 @@ theme: {
 **Permanent (Code-level):**
 
 Edit `src/assets/index.css`:
+
 ```css
---chatbot-button-bg-color: #2563EB;
---chatbot-host-bubble-bg-color: #DBEAFE;
---chatbot-guest-bubble-bg-color: #3B82F6;
---chatbot-header-bg-color: #2563EB;
+--chatbot-button-bg-color: #2563eb;
+--chatbot-host-bubble-bg-color: #dbeafe;
+--chatbot-guest-bubble-bg-color: #3b82f6;
+--chatbot-header-bg-color: #2563eb;
 ```
 
 Then: `yarn build`
@@ -236,29 +253,33 @@ Then: `yarn build`
 **Quick (Configuration-based):**
 
 1. Add font to HTML:
+
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 ```
 
 2. Use custom CSS:
+
 ```javascript
 theme: {
   customCSS: `
     .chatbot-container {
       font-family: 'Inter', sans-serif !important;
     }
-  `
+  `;
 }
 ```
 
 **Permanent (Code-level):**
 
 Edit `src/assets/index.css`:
+
 ```css
 --chatbot-container-font-family: 'Inter', 'Open Sans';
 ```
 
 Edit `tailwind.config.cjs`:
+
 ```javascript
 fontFamily: {
   chatbot: ['Inter', 'Open Sans', ...defaultTheme.fontFamily.sans],
@@ -282,11 +303,13 @@ theme: {
 **Permanent (Code-level):**
 
 Edit `src/assets/index.css`:
+
 ```css
 --chatbot-border-radius: 20px;
 ```
 
 Edit `tailwind.config.cjs`:
+
 ```javascript
 borderRadius: {
   'chatbot': '20px',
@@ -318,6 +341,7 @@ theme: {
 ### Option 1: GitHub Pages (Recommended for CDN)
 
 1. **Push your changes to GitHub:**
+
    ```bash
    git add .
    git commit -m "feat: custom purple/pink theme"
@@ -325,6 +349,7 @@ theme: {
    ```
 
 2. **Enable GitHub Pages:**
+
    - Go to your repo: https://github.com/bencium/FlowiseChatEmbed
    - Settings → Pages
    - Source: Deploy from branch
@@ -332,13 +357,16 @@ theme: {
    - Save
 
 3. **Use in your website:**
+
    ```html
    <script type="module">
      import Chatbot from 'https://bencium.github.io/FlowiseChatEmbed/dist/web.js';
 
      Chatbot.init({
        chatflowid: 'YOUR_FLOWISE_URL',
-       theme: { /* your theme */ }
+       theme: {
+         /* your theme */
+       },
      });
    </script>
    ```
@@ -348,22 +376,27 @@ theme: {
 ### Option 2: Self-Hosted Server
 
 1. **Upload `dist/` folder to your server:**
+
    ```bash
    scp -r dist/ user@yourserver.com:/var/www/chatbot/
    ```
 
 2. **Use in your website:**
+
    ```html
    <script type="module">
      import Chatbot from 'https://yourserver.com/chatbot/dist/web.js';
 
-     Chatbot.init({ /* ... */ });
+     Chatbot.init({
+       /* ... */
+     });
    </script>
    ```
 
 ### Option 3: NPM Package (Private or Public)
 
 1. **Update `package.json`:**
+
    ```json
    {
      "name": "@bencium/flowise-chat-embed",
@@ -373,11 +406,13 @@ theme: {
    ```
 
 2. **Publish:**
+
    ```bash
    npm publish
    ```
 
 3. **Use in projects:**
+
    ```bash
    npm install @bencium/flowise-chat-embed
    ```
@@ -531,31 +566,24 @@ npx serve .
 
 ### Purple/Pink Theme (Default in this fork)
 
-| Element | Color | Hex Code |
-|---------|-------|----------|
-| Primary Button | Purple | `#7C3AED` |
-| Secondary Accent | Pink | `#EC4899` |
-| Bot Bubble Background | Light Purple | `#F3E8FF` |
-| User Bubble Background | Pink | `#EC4899` |
-| Text (Dark) | Dark Gray | `#2d3748` |
-| Text (Light) | White | `#ffffff` |
-| Header Background | Purple | `#7C3AED` |
-| Border Radius | 12px | - |
+| Element                | Color        | Hex Code  |
+| ---------------------- | ------------ | --------- |
+| Primary Button         | Purple       | `#7C3AED` |
+| Secondary Accent       | Pink         | `#EC4899` |
+| Bot Bubble Background  | Light Purple | `#F3E8FF` |
+| User Bubble Background | Pink         | `#EC4899` |
+| Text (Dark)            | Dark Gray    | `#2d3748` |
+| Text (Light)           | White        | `#ffffff` |
+| Header Background      | Purple       | `#7C3AED` |
+| Border Radius          | 12px         | -         |
 
 ### Color Palette
 
 ```css
 /* Brand Colors */
---purple-600: #7C3AED
---pink-500: #EC4899
---purple-50: #F3E8FF
---gray-800: #2d3748
---gray-400: #9ca3af
---white: #ffffff
-
-/* Gradient Examples */
-background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);
-background: linear-gradient(135deg, #EC4899 0%, #F97316 100%);
+--purple-600: #7c3aed --pink-500: #ec4899 --purple-50: #f3e8ff --gray-800: #2d3748 --gray-400: #9ca3af --white: #ffffff /* Gradient Examples */
+  background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
 ```
 
 ---
@@ -572,11 +600,13 @@ background: linear-gradient(135deg, #EC4899 0%, #F97316 100%);
 ### Colors not updating
 
 **Configuration method:**
+
 - Clear browser cache (Cmd+Shift+R or Ctrl+Shift+R)
 - Check for typos in color hex codes
 - Ensure `theme` object is properly formatted
 
 **Code-level method:**
+
 - Run `yarn build` after changes
 - Check that build completed without errors
 - Clear browser cache
@@ -592,7 +622,7 @@ background: linear-gradient(135deg, #EC4899 0%, #F97316 100%);
      .chatbot-container * {
        font-family: 'YourFont', sans-serif !important;
      }
-   `
+   `;
    ```
 
 ### Build errors
@@ -611,15 +641,18 @@ yarn build
 ## 📚 Additional Resources
 
 ### Official Flowise Docs
+
 - [FlowiseChatEmbed GitHub](https://github.com/FlowiseAI/FlowiseChatEmbed)
 - [Flowise Documentation](https://docs.flowiseai.com/)
 
 ### Design Resources
+
 - [Tailwind CSS Colors](https://tailwindcss.com/docs/customizing-colors)
 - [Google Fonts](https://fonts.google.com/)
 - [Color Palette Generator](https://coolors.co/)
 
 ### TypeScript Types
+
 - Full type definitions: `src/features/bubble/types.ts`
 - Component props: Check individual component files in `src/components/`
 
@@ -637,6 +670,7 @@ You now have a fully customized FlowiseChatEmbed with:
 ✅ **Two customization methods** (quick config vs. deep code-level)
 
 **Next steps:**
+
 1. Replace `YOUR_FLOWISE_CHATFLOW_URL` in `examples/custom-design.html`
 2. Open the file in your browser
 3. Test the chat functionality
