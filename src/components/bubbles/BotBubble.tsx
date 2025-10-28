@@ -41,10 +41,10 @@ type Props = {
   handleTTSStop?: (messageId: string) => void;
 };
 
-const defaultBackgroundColor = '#f7f8ff';
-const defaultTextColor = '#303235';
+const defaultBackgroundColor = '#F3E8FF';
+const defaultTextColor = '#2d3748';
 const defaultFontSize = 16;
-const defaultFeedbackColor = '#3B81F6';
+const defaultFeedbackColor = '#7C3AED';
 
 export const BotBubble = (props: Props) => {
   let botDetailsEl: HTMLDetailsElement | undefined;

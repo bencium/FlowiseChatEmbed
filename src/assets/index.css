@@ -5,25 +5,25 @@
 :host {
   --chatbot-container-bg-image: none;
   --chatbot-container-bg-color: transparent;
-  --chatbot-container-font-family: 'Open Sans';
+  --chatbot-container-font-family: 'Poppins', 'Open Sans';
 
-  --chatbot-button-bg-color: #0042da;
+  --chatbot-button-bg-color: #7C3AED;
   --chatbot-button-color: #ffffff;
 
-  --chatbot-host-bubble-bg-color: #f7f8ff;
-  --chatbot-host-bubble-color: #303235;
+  --chatbot-host-bubble-bg-color: #F3E8FF;
+  --chatbot-host-bubble-color: #2d3748;
 
-  --chatbot-guest-bubble-bg-color: #3b81f6;
+  --chatbot-guest-bubble-bg-color: #EC4899;
   --chatbot-guest-bubble-color: #ffffff;
 
   --chatbot-input-bg-color: #ffffff;
-  --chatbot-input-color: #303235;
-  --chatbot-input-placeholder-color: #9095a0;
+  --chatbot-input-color: #2d3748;
+  --chatbot-input-placeholder-color: #9ca3af;
 
-  --chatbot-header-bg-color: #ffffff;
-  --chatbot-header-color: #303235;
+  --chatbot-header-bg-color: #7C3AED;
+  --chatbot-header-color: #ffffff;
 
-  --chatbot-border-radius: 6px;
+  --chatbot-border-radius: 12px;
 
   /* Phone input */
   --PhoneInputCountryFlag-borderColor: transparent;
@@ -31,7 +31,7 @@
 }
 
 a {
-  color: #16bed7;
+  color: #7C3AED;
   font-weight: 500;
 }
 
@@ -164,6 +164,7 @@ textarea {
   background-image: var(--chatbot-container-bg-image);
   background-color: var(--chatbot-container-bg-color);
   font-family:
+    'Poppins',
     'Open Sans',
     -apple-system,
     BlinkMacSystemFont,
@@ -186,20 +187,20 @@ textarea {
 
 .chatbot-button {
   color: var(--chatbot-button-color);
-  background-color: #0042da;
-  border: 1px solid #0042da;
+  background-color: #7C3AED;
+  border: 1px solid #7C3AED;
   border-radius: var(--chatbot-border-radius);
 }
 
 .chatbot-button.selectable {
   color: var(--chatbot-host-bubble-color);
-  background-color: #f7f8ff;
-  border: 1px solid #0042da;
+  background-color: #F3E8FF;
+  border: 1px solid #7C3AED;
 }
 
 .chatbot-host-bubble {
   color: var(--chatbot-host-bubble-color);
-  background-color: #f7f8ff;
+  background-color: #F3E8FF;
   /* force wrapping of long text or links */
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -209,7 +210,7 @@ textarea {
 }
 
 .chatbot-host-bubble > .bubble-typing {
-  background-color: #f7f8ff;
+  background-color: #F3E8FF;
   border: var(--chatbot-host-bubble-border);
   border-radius: 6px;
 }
@@ -222,7 +223,7 @@ textarea {
 
 .chatbot-guest-bubble {
   color: var(--chatbot-guest-bubble-color);
-  background-color: #3b81f6;
+  background-color: #EC4899;
   border-radius: 6px;
   /* force wrapping of long text or links */
   overflow-wrap: break-word;
@@ -254,19 +255,19 @@ textarea {
 }
 
 .ping span {
-  background-color: #0042da;
+  background-color: #7C3AED;
 }
 
 .rating-icon-container svg {
   width: 42px;
   height: 42px;
-  stroke: #0042da;
-  fill: #f7f8ff;
+  stroke: #7C3AED;
+  fill: #F3E8FF;
   transition: fill 100ms ease-out;
 }
 
 .rating-icon-container.selected svg {
-  fill: #0042da;
+  fill: #7C3AED;
 }
 
 .rating-icon-container:hover svg {
@@ -278,12 +279,12 @@ textarea {
 }
 
 .upload-progress-bar {
-  background-color: #0042da;
+  background-color: #7C3AED;
   border-radius: var(--chatbot-border-radius);
 }
 
 .total-files-indicator {
-  background-color: #0042da;
+  background-color: #7C3AED;
   color: var(--chatbot-button-color);
   font-size: 10px;
 }
@@ -293,11 +294,11 @@ textarea {
 }
 
 .chatbot-upload-input.dragging-over {
-  border-color: #0042da;
+  border-color: #7C3AED;
 }
 
 .secondary-button {
-  background-color: #f7f8ff;
+  background-color: #F3E8FF;
   color: var(--chatbot-host-bubble-color);
   border-radius: var(--chatbot-border-radius);
 }
@@ -396,7 +397,7 @@ textarea {
 }
 
 .markdownanswer a {
-  color: #16bed7;
+  color: #7C3AED;
   font-weight: 500;
 }
 

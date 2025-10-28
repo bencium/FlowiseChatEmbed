@@ -12,10 +12,10 @@ type Props = ButtonTheme & {
   autoOpenOnMobile?: boolean; // Optional parameter for opening on mobile
 };
 
-const defaultButtonColor = '#3B81F6';
+const defaultButtonColor = '#7C3AED';
 const defaultIconColor = 'white';
-const defaultBottom = 20;
-const defaultRight = 20;
+const defaultBottom = 24;
+const defaultRight = 24;
 
 export const BubbleButton = (props: Props) => {
   const buttonSize = getBubbleButtonSize(props.size);

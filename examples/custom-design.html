@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flowise Custom Design - Configuration Example</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #2d3748;
+            margin-top: 0;
+            font-size: 32px;
+        }
+
+        h2 {
+            color: #4a5568;
+            margin-top: 30px;
+            font-size: 24px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .info-box {
+            background: #f7fafc;
+            border-left: 4px solid #4299e1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .info-box h3 {
+            margin-top: 0;
+            color: #2c5282;
+        }
+
+        .info-box code {
+            background: #edf2f7;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            color: #c53030;
+        }
+
+        .customization-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .customization-list li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .customization-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: bold;
+        }
+
+        .warning {
+            background: #fff5f5;
+            border-left: 4px solid #f56565;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .warning strong {
+            color: #c53030;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Flowise Custom Design Example</h1>
+
+        <div class="info-box">
+            <h3>📋 Configuration-Based Customization</h3>
+            <p>This example demonstrates how to customize the Flowise chat embed using the <code>theme</code> configuration object. No rebuild required - just modify the JavaScript below!</p>
+            <ul class="customization-list">
+                <li>Custom brand colors (purple/pink theme)</li>
+                <li>Custom typography (Poppins font)</li>
+                <li>Adjusted layout and sizing</li>
+                <li>Custom avatars</li>
+                <li>Welcome message and starter prompts</li>
+                <li>Custom button positioning</li>
+            </ul>
+        </div>
+
+        <h2>💬 Your Custom Chatbot</h2>
+        <p>The chat widget will appear in the bottom-right corner. Click the button to open it!</p>
+
+        <div class="warning">
+            <strong>⚠️ Important:</strong> Replace <code>YOUR_FLOWISE_CHATFLOW_URL</code> in the script below with your actual Flowise API endpoint.
+        </div>
+
+        <h2>🎯 Customization Features</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+            <div style="background: #f7fafc; padding: 20px; border-radius: 8px;">
+                <h3 style="margin-top: 0; color: #2d3748;">🎨 Colors</h3>
+                <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
+                    <li>Button: Purple (#7C3AED)</li>
+                    <li>Bot bubbles: Light purple</li>
+                    <li>User bubbles: Pink gradient</li>
+                    <li>Header: Purple (#7C3AED)</li>
+                </ul>
+            </div>
+            <div style="background: #f7fafc; padding: 20px; border-radius: 8px;">
+                <h3 style="margin-top: 0; color: #2d3748;">✏️ Typography</h3>
+                <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
+                    <li>Font: Poppins (Google Fonts)</li>
+                    <li>Body text: 16px</li>
+                    <li>User input: 15px</li>
+                </ul>
+            </div>
+            <div style="background: #f7fafc; padding: 20px; border-radius: 8px;">
+                <h3 style="margin-top: 0; color: #2d3748;">📐 Layout</h3>
+                <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
+                    <li>Chat height: 700px</li>
+                    <li>Chat width: 450px</li>
+                    <li>Border radius: 12px</li>
+                    <li>Button: Bottom-right (24px)</li>
+                </ul>
+            </div>
+            <div style="background: #f7fafc; padding: 20px; border-radius: 8px;">
+                <h3 style="margin-top: 0; color: #2d3748;">⚙️ Features</h3>
+                <ul style="margin: 0; padding-left: 20px; line-height: 1.8;">
+                    <li>Welcome message enabled</li>
+                    <li>Starter prompts included</li>
+                    <li>Footer with "Powered by..."</li>
+                    <li>Feedback buttons</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--
+        ============================================================================
+        FLOWISE CHAT EMBED SCRIPT
+        ============================================================================
+
+        NOTE: This uses the LOCAL BUILD from your forked repository.
+
+        Development workflow:
+        1. Make changes to source files in src/
+        2. Run: yarn build
+        3. Reload this page to see changes
+
+        For production: Replace "../dist/web.js" with your deployed URL like:
+        "https://your-username.github.io/FlowiseChatEmbed/dist/web.js"
+    -->
+
+    <!-- Load Google Fonts for custom typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Load Flowise Web Component from REMOTE GitHub Repository -->
+    <!--
+        Using jsDelivr CDN - works immediately after pushing to GitHub
+        No need to enable GitHub Pages!
+    -->
+    <script type="module">
+        // Using jsDelivr CDN (works with any public GitHub repo):
+        import Chatbot from 'https://cdn.jsdelivr.net/gh/bencium/FlowiseChatEmbed@main/dist/web.js';
+
+        // Alternative - GitHub Pages (requires enabling Pages in repo settings):
+        // import Chatbot from 'https://bencium.github.io/FlowiseChatEmbed/dist/web.js';
+
+        // ========================================================================
+        // FLOWISE API CONFIGURATION
+        // ========================================================================
+        Chatbot.init({
+            chatflowid: "f73c658b-2a4c-4b0d-a1ad-02fa43e3c630",
+            apiHost: "https://medhubai.bencium.io",
+
+            theme: {
+                // ================================================================
+                // CHAT WINDOW CUSTOMIZATION
+                // ================================================================
+                chatWindow: {
+                    // --- Title Bar ---
+                    title: 'AI Assistant',
+                    titleAvatarSrc: 'https://cdn-icons-png.flaticon.com/512/4712/4712109.png',
+                    showTitle: true,
+                    titleTextColor: '#ffffff',
+                    titleBackgroundColor: '#7C3AED', // Purple
+
+                    // --- Welcome Message ---
+                    welcomeMessage: '👋 Welcome! I\'m your AI assistant. How can I help you today?',
+
+                    // --- Starter Prompts ---
+                    starterPrompts: [
+                        'Tell me about your services',
+                        'How does this work?',
+                        'What can you help me with?',
+                        'Show me an example'
+                    ],
+                    starterPromptFontSize: 14,
+
+                    // --- Bot Message Styling ---
+                    botMessage: {
+                        backgroundColor: '#F3E8FF', // Light purple
+                        textColor: '#2d3748',
+                        showAvatar: true,
+                        avatarSrc: 'https://cdn-icons-png.flaticon.com/512/4712/4712109.png',
+                    },
+
+                    // --- User Message Styling ---
+                    userMessage: {
+                        backgroundColor: '#EC4899', // Pink
+                        textColor: '#ffffff',
+                        showAvatar: true,
+                        avatarSrc: 'https://cdn-icons-png.flaticon.com/512/3177/3177440.png',
+                    },
+
+                    // --- Text Input Field ---
+                    textInput: {
+                        backgroundColor: '#ffffff',
+                        textColor: '#2d3748',
+                        placeholder: 'Type your message...',
+                        sendButtonColor: '#7C3AED', // Purple
+                        fontSize: 15,
+                    },
+
+                    // --- Overall Chat Window Styling ---
+                    backgroundColor: '#ffffff',
+                    backgroundImage: '', // Optional: Use a gradient or image
+                    fontSize: 16,
+                    height: 700,
+                    width: 450,
+                    borderRadius: 12,
+
+                    // --- Feedback Buttons ---
+                    feedback: {
+                        color: '#7C3AED', // Purple
+                    },
+
+                    // --- Footer ---
+                    footer: {
+                        showFooter: true,
+                        textColor: '#9ca3af',
+                        text: 'Powered by',
+                        company: 'Flowise',
+                        companyLink: 'https://flowiseai.com',
+                    },
+
+                    // --- Date/Time Display ---
+                    dateTimeToggle: {
+                        date: true,
+                        time: true,
+                    },
+                },
+
+                // ================================================================
+                // CHAT BUTTON CUSTOMIZATION
+                // ================================================================
+                button: {
+                    backgroundColor: '#7C3AED', // Purple
+                    iconColor: '#ffffff',
+                    customIconSrc: '', // Optional: Use custom SVG/image
+                    size: 'medium', // 'small' | 'medium' | 'large' | number (pixels)
+
+                    // Position from bottom and right
+                    bottom: 24,
+                    right: 24,
+
+                    // Enable drag and drop
+                    dragAndDrop: false,
+
+                    // Auto-open on page load
+                    autoWindowOpen: {
+                        autoOpen: false, // Set to true to auto-open
+                        openDelay: 0, // Delay in seconds
+                        autoOpenOnMobile: false,
+                    },
+                },
+
+                // ================================================================
+                // TOOLTIP (when button is closed)
+                // ================================================================
+                tooltip: {
+                    showTooltip: true,
+                    tooltipMessage: 'Hi! 👋 Need help?',
+                    tooltipBackgroundColor: '#2d3748',
+                    tooltipTextColor: '#ffffff',
+                    tooltipFontSize: 14,
+                },
+
+                // ================================================================
+                // CUSTOM CSS INJECTION (Advanced)
+                // ================================================================
+                // You can inject completely custom CSS to override any styling
+                customCSS: `
+                    /* Custom font family for the entire chatbot */
+                    .flowise-chatbot {
+                        font-family: 'Poppins', sans-serif !important;
+                    }
+
+                    /* Custom scrollbar */
+                    .flowise-chatbot ::-webkit-scrollbar {
+                        width: 8px;
+                    }
+
+                    .flowise-chatbot ::-webkit-scrollbar-track {
+                        background: #f1f1f1;
+                    }
+
+                    .flowise-chatbot ::-webkit-scrollbar-thumb {
+                        background: #7C3AED;
+                        border-radius: 4px;
+                    }
+
+                    .flowise-chatbot ::-webkit-scrollbar-thumb:hover {
+                        background: #6D28D9;
+                    }
+
+                    /* Smooth animations */
+                    .flowise-chatbot * {
+                        transition: all 0.2s ease;
+                    }
+
+                    /* Enhance starter prompts */
+                    .starter-prompt-button {
+                        background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%) !important;
+                        color: white !important;
+                        font-weight: 500 !important;
+                        box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3) !important;
+                    }
+
+                    .starter-prompt-button:hover {
+                        transform: translateY(-2px) !important;
+                        box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4) !important;
+                    }
+
+                    /* Enhance message bubbles */
+                    .user-message {
+                        background: linear-gradient(135deg, #EC4899 0%, #F97316 100%) !important;
+                        box-shadow: 0 2px 8px rgba(236, 72, 153, 0.3) !important;
+                    }
+
+                    .bot-message {
+                        box-shadow: 0 2px 8px rgba(124, 58, 237, 0.1) !important;
+                    }
+                `
+            },
+
+            // ================================================================
+            // OBSERVABILITY (Optional - for debugging)
+            // ================================================================
+            observersConfig: {
+                // Observe when chatbot is loaded
+                observeMessages: false,
+                // Observe when user sends a message
+                observeUserInput: false,
+            },
+        });
+    </script>
+
+    <!--
+        ============================================================================
+        HOW TO CUSTOMIZE FURTHER
+        ============================================================================
+
+        CONFIGURATION-BASED (No rebuild needed):
+        ----------------------------------------------
+        1. Edit the theme object above
+        2. Reload this page to see changes instantly
+        3. Refer to: src/features/bubble/types.ts for all available options
+
+        CODE-LEVEL (Requires rebuild):
+        ----------------------------------------------
+        1. Edit source files in src/ directory
+        2. Run: yarn build
+        3. Reload this page to see changes
+
+        KEY FILES FOR CODE-LEVEL CUSTOMIZATION:
+        - src/assets/index.css - CSS design tokens
+        - src/components/bubbles/*.tsx - Message bubble components
+        - src/components/buttons/*.tsx - Button components
+        - tailwind.config.cjs - Tailwind theme
+
+        ============================================================================
+    -->
+</body>
+</html>

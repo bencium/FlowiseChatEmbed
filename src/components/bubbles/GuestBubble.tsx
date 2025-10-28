@@ -17,7 +17,7 @@ type Props = {
   renderHTML?: boolean;
 };
 
-const defaultBackgroundColor = '#3B81F6';
+const defaultBackgroundColor = '#EC4899';
 const defaultTextColor = '#ffffff';
 const defaultFontSize = 16;
 
