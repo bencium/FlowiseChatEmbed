@@ -460,7 +460,7 @@ textarea {
     height: 100% !important;
     overflow: auto;
     overflow-x: hidden; /* Prevent horizontal scrolling */
-    border-radius: 0px !important; /* Only remove radius on mobile fullscreen */
+    /* Removed border-radius override to keep rounded corners */
   }
 
   /* Keep button and header rounded on mobile */
